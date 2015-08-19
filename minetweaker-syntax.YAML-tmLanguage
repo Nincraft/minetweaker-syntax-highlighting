@@ -8,7 +8,7 @@ uuid: 71a9229f-3e62-4a32-bbb2-6e281f391af8
 patterns:
 - comment: var
   name: storage.type
-  match: \b(var)\b
+  match: \b(var|byte)\b
 - comment: package import
   name: keyword.other.minetweaker
   match: ^\s*(import)\b(?:\s*([^ ;$]+)\s*(;)?)?
@@ -16,12 +16,20 @@ patterns:
     '1': {name: keyword.other}
     '2': {name: storage.modifier}
     '3': {name: punctuation.separator}
-- comment: comments
+- comment: inline comments
   name: comment.line.number-sign
   match: \s*((#).*$\n?)
+- comment: block comments
+  name: comment.block
+  begin: \/\*
+  beginCaptures:
+    '0': {name: comment.block}
+  end: \*\/
+  endCaptures:
+    '0': {name: comment.block}
 - comment: for loop
   name: keyword.control.minetweaker
-  match: \b(for)\b
+  match: \b(for|in)\b
 - comment: constants (true, false, null)
   name: constant.language.minetweaker
   match: \b(true|false|null)\b
@@ -34,11 +42,21 @@ patterns:
 - comment: arrays
   name: storage.type.object.array.minetweaker
   match: \b((?:[a-z]\w*\.)*[A-Z]+\w*)(?=\[)
-- comment: ore dictionary
+- comment: ore/liquid dictionary
   name: variable.parameter
-  match: (<)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:>)?
+  match: (<)\b(?:\s*(ore|liquid))(?:\s*(:)?)(?:(\w|\.|:)*)\b(?:>)?
   captures:
     '1': {name: punctuation.separator}
     '2': {name: storage.type}
     '3': {name: punctuation.separator}
+- comment: strings
+  name: string.quoted.double.minetweaker
+  contentName: string.other
+  begin: \"
+  beginCaptures:
+    '0': {name: punctuation.definition.string.begin}
+  end: \"
+  endCaptures:
+    '0': {name: punctuation.definition.string.end}
+
 ...

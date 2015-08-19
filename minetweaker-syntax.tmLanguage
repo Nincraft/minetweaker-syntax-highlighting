@@ -14,7 +14,7 @@
 			<key>comment</key>
 			<string>var</string>
 			<key>match</key>
-			<string>\b(var)\b</string>
+			<string>\b(var|byte)\b</string>
 			<key>name</key>
 			<string>storage.type</string>
 		</dict>
@@ -46,17 +46,43 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>comments</string>
+			<string>inline comments</string>
 			<key>match</key>
 			<string>\s*((#).*$\n?)</string>
 			<key>name</key>
 			<string>comment.line.number-sign</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>\/\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>block comments</string>
+			<key>end</key>
+			<string>\*\/</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>comment.block</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>for loop</string>
 			<key>match</key>
-			<string>\b(for)\b</string>
+			<string>\b(for|in)\b</string>
 			<key>name</key>
 			<string>keyword.control.minetweaker</string>
 		</dict>
@@ -112,11 +138,39 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>ore dictionary</string>
+			<string>ore/liquid dictionary</string>
 			<key>match</key>
-			<string>(&lt;)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:&gt;)?</string>
+			<string>(&lt;)\b(?:\s*(ore|liquid))(?:\s*(:)?)(?:(\w|\.|:)*)\b(?:&gt;)?</string>
 			<key>name</key>
 			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>strings</string>
+			<key>contentName</key>
+			<string>string.other</string>
+			<key>end</key>
+			<string>\"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.minetweaker</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
