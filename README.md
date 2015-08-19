@@ -1,2 +1,2 @@
-# minetweaker-syntax-highlighting
-Syntax highlighting for Minetweaker scripts
+# Minetweaker Syntax Highlighting
+Sublime Text syntax highlighting for Minetweaker scripts
