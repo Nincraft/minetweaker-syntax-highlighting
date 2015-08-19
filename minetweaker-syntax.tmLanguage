@@ -52,6 +52,72 @@
 			<key>name</key>
 			<string>comment.line.number-sign</string>
 		</dict>
+		<dict>
+			<key>comment</key>
+			<string>for loop</string>
+			<key>match</key>
+			<string>\b(for)\b</string>
+			<key>name</key>
+			<string>keyword.control.minetweaker</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>constants (true, false, null)</string>
+			<key>match</key>
+			<string>\b(true|false|null)\b</string>
+			<key>name</key>
+			<string>constant.language.minetweaker</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>numbers</string>
+			<key>match</key>
+			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.minetweaker</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>assignment operator</string>
+			<key>match</key>
+			<string>(=)</string>
+			<key>name</key>
+			<string>keyword.operator.assignment.minetweaker</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>arrays</string>
+			<key>match</key>
+			<string>\b((?:[a-z]\w*\.)*[A-Z]+\w*)(?=\[)</string>
+			<key>name</key>
+			<string>storage.type.object.array.minetweaker</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>ore dictionary</string>
+			<key>match</key>
+			<string>^\s*(&lt;)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:&gt;)?</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>text.minetweaker</string>
