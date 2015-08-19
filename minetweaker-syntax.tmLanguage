@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>zs</string>
+	</array>
+	<key>name</key>
+	<string>Minetweaker</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>var</string>
+			<key>match</key>
+			<string>\b(var)\b</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>package import</string>
+			<key>match</key>
+			<string>^\s*(import)\b(?:\s*([^ ;$]+)\s*(;)?)?</string>
+			<key>name</key>
+			<string>keyword.other.minetweaker</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>comments</string>
+			<key>match</key>
+			<string>\s*((#).*$\n?)</string>
+			<key>name</key>
+			<string>comment.line.number-sign</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.minetweaker</string>
+	<key>uuid</key>
+	<string>71a9229f-3e62-4a32-bbb2-6e281f391af8</string>
+</dict>
+</plist>

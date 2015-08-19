@@ -1,0 +1,22 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Minetweaker
+scopeName: text.minetweaker
+fileTypes: [zs]
+uuid: 71a9229f-3e62-4a32-bbb2-6e281f391af8
+
+patterns:
+- comment: var
+  name: storage.type
+  match: \b(var)\b
+- comment: package import
+  name: keyword.other.minetweaker
+  match: ^\s*(import)\b(?:\s*([^ ;$]+)\s*(;)?)?
+  captures:
+    '1': {name: keyword.other}
+    '2': {name: storage.modifier}
+    '3': {name: punctuation.separator}
+- comment: comments
+  name: comment.line.number-sign
+  match: \s*((#).*$\n?)   
+...
