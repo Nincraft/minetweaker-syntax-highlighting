@@ -36,7 +36,7 @@ patterns:
   match: \b((?:[a-z]\w*\.)*[A-Z]+\w*)(?=\[)
 - comment: ore dictionary
   name: variable.parameter
-  match: ^\s*(<)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:>)?
+  match: (<)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:>)?
   captures:
     '1': {name: punctuation.separator}
     '2': {name: storage.type}

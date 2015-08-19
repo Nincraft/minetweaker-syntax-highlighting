@@ -114,7 +114,7 @@
 			<key>comment</key>
 			<string>ore dictionary</string>
 			<key>match</key>
-			<string>^\s*(&lt;)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:&gt;)?</string>
+			<string>(&lt;)\b(?:\s*(ore))(?:\s*(:)?)(?:\w*)\b(?:&gt;)?</string>
 			<key>name</key>
 			<string>variable.parameter</string>
 		</dict>
