@@ -7,7 +7,7 @@
 		<string>zs</string>
 	</array>
 	<key>name</key>
-	<string>Minetweaker</string>
+	<string>Zen Script - Minetweaker</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -80,9 +80,9 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>for loop</string>
+			<string>control keywords</string>
 			<key>match</key>
-			<string>\b(for|in)\b</string>
+			<string>\b(return|break|case|continue|default|do|while|for|in|switch|if|else)\b</string>
 			<key>name</key>
 			<string>keyword.control.minetweaker</string>
 		</dict>
@@ -109,6 +109,14 @@
 			<string>(=)</string>
 			<key>name</key>
 			<string>keyword.operator.assignment.minetweaker</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>math operators</string>
+			<key>match</key>
+			<string>(\-|\+|\*|\/|%)</string>
+			<key>name</key>
+			<string>keyword.operator.arithmetic.minetweaker</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -156,7 +164,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>strings</string>
+			<string>double quote string</string>
 			<key>contentName</key>
 			<string>string.other</string>
 			<key>end</key>
@@ -171,6 +179,65 @@
 			</dict>
 			<key>name</key>
 			<string>string.quoted.double.minetweaker</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>single quote string</string>
+			<key>contentName</key>
+			<string>string.other</string>
+			<key>end</key>
+			<string>\'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.minetweaker</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.minetweaker</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.minetweaker</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.minetweaker</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.minetweaker</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>functions like function</string>
+			<key>match</key>
+			<string>\b(function)\s?(\()(.*?)(\))</string>
+			<key>name</key>
+			<string>keyword.other</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
