@@ -14,7 +14,7 @@
 			<key>comment</key>
 			<string>var</string>
 			<key>match</key>
-			<string>\b(var|byte)\b</string>
+			<string>\b(var|val|bool|byte|short|int|long|float|double|string)\b</string>
 			<key>name</key>
 			<string>storage.type</string>
 		</dict>
@@ -106,7 +106,7 @@
 			<key>comment</key>
 			<string>assignment operator</string>
 			<key>match</key>
-			<string>(=)</string>
+			<string>(=|\+=|-=|\/=|%=|\*=|^=|\|=|&amp;=|~=)</string>
 			<key>name</key>
 			<string>keyword.operator.assignment.minetweaker</string>
 		</dict>
@@ -238,6 +238,14 @@
 			<string>\b(function)\s?(\()(.*?)(\))</string>
 			<key>name</key>
 			<string>keyword.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>built in functions</string>
+			<key>match</key>
+			<string>(moveResearch|clearPrereqs|addPrereq|removeTab|addBasinRecipe|addAlloy|removeAlloy|addTableRecipe|print|anyDamage|onlyWithTag|transformDamage|withAmount|withTag|withDamage|addShapedMirrored|addShaped|addShapeless|addRecipe|setFuel|removeShapeless|removeShaped|removeMelting|only|marked|matches|applyTransform|weight|updateTag|addMelting|addAll|add|mirror|reuse|transformReplace|onlyDamaged|onlyDamageAtLeast|onlyDamageAtMost|onlyDamageBetween|removeRecipe|remove|transform)</string>
+			<key>name</key>
+			<string>entity.name.function</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

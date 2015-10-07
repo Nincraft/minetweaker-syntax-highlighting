@@ -8,7 +8,7 @@ uuid: 71a9229f-3e62-4a32-bbb2-6e281f391af8
 patterns:
 - comment: var
   name: storage.type
-  match: \b(var|byte)\b
+  match: \b(var|val|bool|byte|short|int|long|float|double|string)\b
 - comment: package import
   name: keyword.other.minetweaker
   match: ^\s*(import)\b(?:\s*([^ ;$]+)\s*(;)?)?
@@ -38,7 +38,7 @@ patterns:
   match: \b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\b
 - comment: assignment operator
   name: keyword.operator.assignment.minetweaker
-  match: (=)
+  match: (=|\+=|-=|\/=|%=|\*=|^=|\|=|&=|~=)
 - comment: math operators
   name: keyword.operator.arithmetic.minetweaker
   match: (\-|\+|\*|\/|%)
@@ -78,4 +78,7 @@ patterns:
     '2': {name: punctuation.definition.parameters.begin.minetweaker}
     '3': {name: variable.parameter.function.minetweaker}
     '4': {name: punctuation.definition.parameters.end.minetweaker}
+- comment: built in functions
+  name: entity.name.function
+  match: (moveResearch|clearPrereqs|addPrereq|removeTab|addBasinRecipe|addAlloy|removeAlloy|addTableRecipe|print|anyDamage|onlyWithTag|transformDamage|withAmount|withTag|withDamage|addShapedMirrored|addShaped|addShapeless|addRecipe|setFuel|removeShapeless|removeShaped|removeMelting|only|marked|matches|applyTransform|weight|updateTag|addMelting|addAll|add|mirror|reuse|transformReplace|onlyDamaged|onlyDamageAtLeast|onlyDamageAtMost|onlyDamageBetween|removeRecipe|remove|transform)
 ...
